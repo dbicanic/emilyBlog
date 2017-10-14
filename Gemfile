@@ -31,6 +31,10 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 # Use haml over erb
 gem "haml"
+# Use bootstrap 4
+gem 'bootstrap', '~> 4.0.0.beta'
+# jQuery for bootstrap
+gem 'jquery-rails'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
