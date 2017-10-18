@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get '/signup', to: 'admin#new'
+
   get 'welcome/index'
 
   resources :articles do
