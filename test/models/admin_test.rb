@@ -3,7 +3,8 @@ require 'test_helper'
 class AdminTest < ActiveSupport::TestCase
 
 	def setup
-		@admin = Admin.new(name: "Example Admin", email: "Admin@example.com")
+		@admin = Admin.new(name: "Example Admin", email: "Admin@example.com", 
+			password: "foobar", password_confirmation: "foobar")
 	end
 
 	test "should be valid" do
@@ -45,4 +46,22 @@ class AdminTest < ActiveSupport::TestCase
 		@admin.save
 		assert_not duplicate_admin.valid?
 	end
+
+	test "email addresses should be saved as lower-case" do
+	    mixed_case_email = "Foo@ExAMPle.CoM"
+	    @admin.email = mixed_case_email
+	    @admin.save
+	    assert_equal mixed_case_email.downcase, @admin.reload.email
+	end
+
+	test "password should be present (nonblank)" do
+	    @admin.password = @admin.password_confirmation = " " * 6
+	    assert_not @admin.valid?
+	end
+
+	  test "password should have a minimum length" do
+	    @admin.password = @admin.password_confirmation = "a" * 5
+	    assert_not @admin.valid?
+	end
+
 end
