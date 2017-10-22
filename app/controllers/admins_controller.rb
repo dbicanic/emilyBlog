@@ -1,4 +1,4 @@
-class AdminController < ApplicationController
+class AdminsController < ApplicationController
 
 	def show
 		@admin = Admin.find(params[:id])

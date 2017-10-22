@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   	resources :comments
   end
 
-  get '/createAdmin', to: 'admin#new'
-  resources :admin
+  get '/createAdmin', to: 'admins#new'
+  resources :admins
 
 end
