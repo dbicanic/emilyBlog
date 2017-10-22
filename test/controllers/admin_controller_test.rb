@@ -2,7 +2,7 @@ require 'test_helper'
 
 class AdminControllerTest < ActionDispatch::IntegrationTest
   test "should get new" do
-    get signup_path
+    get createAdmin_path
     assert_response :success
   end
 
