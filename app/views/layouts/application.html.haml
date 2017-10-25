@@ -19,6 +19,8 @@
 				.col-9.main
 					.col-offset-2
 					.mainContent
+						- flash.each do |message_type, message|
+							%div{:class => "alert alert-#{message_type}"}= message
 						= yield
 				.col-3.bio
 					%p Meggings crucifix fam man bun. Gochujang stumptown unicorn viral, fashion axe pop-up schlitz locavore banjo affogato disrupt trust fund messenger bag kickstarter hammock. Tofu listicle umami, flannel artisan vegan pop-up gochujang adaptogen lumbersexual ethical. Forage iceland prism quinoa humblebrag intelligentsia. Trust fund echo park intelligentsia meggings lyft asymmetrical. Live-edge kogi lyft celiac single-origin coffee health goth fingerstache fixie selvage paleo brunch distillery pok pok. Lumbersexual jianbing blue bottle gentrify poke kombucha. Readymade pour-over helvetica chia deep v drinking vinegar messenger bag chartreuse. Put a bird on it la croix disrupt VHS poutine. Intelligentsia pork belly skateboard copper mug letterpress bushwick, pug kogi schlitz. Fingerstache unicorn hoodie, mumblecore stumptown cornhole asymmetrical man braid tilde prism try-hard cloud bread dreamcatcher. Ennui hella vegan gochujang, air plant meggings photo booth. Thundercats heirloom pop-up banjo organic vegan. IPhone shabby chic squid tumblr readymade. Mumblecore taxidermy subway tile lo-fi DIY vape.

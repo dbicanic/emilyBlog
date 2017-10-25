@@ -11,4 +11,16 @@ class AdminsCreationTest < ActionDispatch::IntegrationTest
 		end
 		assert_template 'admins/new'
 	end
+
+	test "valid signup information" do
+	    get createAdmin_path
+	    assert_difference 'Admin.count', 1 do
+	      post admins_path, params: { admin: { name:  "Example admin",
+	                                         email: "admin@example.com",
+	                                         password:              "password",
+	                                         password_confirmation: "password" } }
+	    end
+	    follow_redirect!
+	    assert_template 'admins/show'
+	  end
 end
