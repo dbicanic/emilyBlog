@@ -64,4 +64,8 @@ class AdminTest < ActiveSupport::TestCase
 	    assert_not @admin.valid?
 	end
 
+	test "authenticated? should return false for a admin with nil digest" do
+    	assert_not @admin.authenticated?('')
+  	end
+
 end
