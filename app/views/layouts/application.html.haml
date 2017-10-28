@@ -15,6 +15,11 @@
 		.container-fluid
 			.row.header
 				%h1.col.text-center Emily's Blog
+				- if logged_in?
+					= link_to "Admin Page", '#'
+					= link_to "Log out", logout_path, method: :delete
+				- else 
+					= link_to "Log in", login_path
 			.row
 				.col-9.main
 					.col-offset-2
