@@ -38,6 +38,8 @@ gem 'bootstrap', '~> 4.0.0.beta'
 # jQuery for bootstrap
 gem 'jquery-rails'
 
+gem 'ckeditor'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
