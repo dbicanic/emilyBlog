@@ -1,10 +1,8 @@
 Rails.application.routes.draw do
+  
   get 'articles/index'
   root 'articles#index'
-
-  resources :articles do
-  	resources :comments
-  end
+  resources :articles
 
   get '/createAdmin', to: 'admins#new'
   resources :admins
